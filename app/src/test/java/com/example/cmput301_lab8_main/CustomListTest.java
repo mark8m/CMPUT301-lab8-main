@@ -40,5 +40,15 @@ public class CustomListTest {
         assertEquals(list.getCount(), listSize); // True if list size is original list size, i.e. 0
 
     }
+
+    @Test
+    public void countCitiesTest() {
+        int listSize = list.getCount();
+        City city = new City("Edmonton", "AB");
+        list.addCity(city);
+        assertEquals(list.countCities(), listSize + 1);
+        list.deleteCity(city);
+        assertEquals(list.countCities(), listSize);
+    }
 }
 
